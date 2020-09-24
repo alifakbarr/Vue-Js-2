@@ -1,0 +1,15 @@
+h3{
+	margin: 50px 0;
+}
+.row .item-book{
+	background-color: #f9f9f9;
+	border-radius: 9px;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	width: 100px;
+}
+.row {
+	display: flex;
+	justify-content: space-between;
+}

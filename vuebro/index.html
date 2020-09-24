@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/dist/css/bootstrapku.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1">
+</head>
+<body>
+
+	<div class="header container">
+		<h3>I am {{ name }}</h3>
+		<div class="row">
+			<div class="col">
+				<h2>Binding Data</h2>
+				<p v-bind:title="info">
+					nice to meet you
+				</p>
+			</div>
+			<div class="col">
+				<h2>Conditional</h2>
+				<p v-if="showtext">
+					nice to meet you
+				</p>
+			</div>
+			<div class="col">
+				<h2>Loop</h2>
+				<ul>
+					<li v-for="food in foods">{{food.text}}</li>
+				</ul>
+			</div>
+			<div class="col">
+				<h2>User's input</h2>
+				<p>{{ myCountry }}</p>
+				<p>
+					<button v-on:click="changeCountry">Change</button>
+					<!-- ketika button di klik maka jalankan function changeCountry -->
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h2>Model Vue Js</h2>
+				<p>What is your name?</p>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">@</span>
+					</div>
+					<input v-model="myName"type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<!-- v-model = realtime -->
+				<p>My name is {{ myName }}</p>
+			</div>
+
+			<div class="col">
+				<h2>Reusable</h2>
+				<h5>Myfood</h5>
+				<ul>
+					<myfood 
+						v-for="item in foodlist"
+						v-bind:key="item.id"
+						v-bind:favorites="item"
+					>
+					</myfood>
+				</ul>
+			</div>
+
+			<div class="col">
+				<h2>Origin Data</h2>
+				<p v-once>{{sayHello}}</p>
+				<!-- v-once akan membuat user tidak dapat merubah apapun didalamnya -->
+			</div>
+			<div class="col">
+				<h2>Convert Element</h2>
+				<p v-html="sayHello"></p>
+			</div>
+		</div>
+
+		<div class="row">	
+			<!-- <div class="col">
+				<h2>Filter Data</h2>
+				<ul>
+					<li v-for="drink in orderedDrink">{{drink.nama}}
+				</li>
+				</ul>
+			</div>
+ -->	
+ 			<div class="col ">
+ 				<h2>Vue transition</h2>
+ 				<transition 
+ 					name="easter-appear"
+ 					enter-active-class="animated flash"
+ 					leave-active-class="animated bounceOut">
+ 					<img src="images.jpg" v-if="show">
+ 				</transition>
+ 				<button class="btn btn-info" v-on:click="show = !show">show/hide</button>
+ 			</div>
+		</div>
+ 	</div>
+
+	
+</body>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/jquery.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/popper.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/js.js"></script>
+</html>

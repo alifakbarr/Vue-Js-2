@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do List</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/dist/css/bootstrapku.css">
+	<link rel="stylesheet" type="text/css" href="css/todolist.css">
+
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<p class="title">My Work</p>
+					<div v-for="work in mywork" class="row">
+						<div class="item col-8">
+							<div class="row">
+								<div class="col-3">
+									<img src="icon/edit-button.png" class="icon">
+								</div>
+								<div class=col-8>
+									<!-- v-bind untuk data dinamic -->
+									<h4>{{ work.title}}</h4>
+									<p>Assigned to:<span class="blue-glow">{{ work.assigned}}</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<p class="title">Create New</p>
+
+					<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1"><i class="fas fa-check"></i></span>
+					  </div>
+					  <input v-model="title" type="text" class="form-control" placeholder="What to do?" aria-label="What to do?" aria-describedby="basic-addon1">
+					</div>
+
+					<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
+					  </div>
+					  <input v-model="assigned" type="text" class="form-control" placeholder="For who?" aria-label="For who?" aria-describedby="basic-addon1">
+					</div>
+					<button v-on:click="addNewtask" type="button" class="btn btn-info">Create</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/todolist.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/jquery.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/popper.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/js.js"></script>
+	<script src="fontawesome.js"></script>
+</html>

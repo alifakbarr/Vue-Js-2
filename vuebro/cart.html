@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mycart</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/dist/css/bootstrapku.css">
+	<link rel="stylesheet" type="text/css" href="css/cart.css">
+
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<p class="title">My Cart {{ mycart.length }}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div v-if="Object.keys(mycart).length === 0"class="col">
+					<p>You dont have item</p>
+					<a href="#">Shop Now</a>
+				</div>
+
+				<div v-for="cart in mycart"class="col">
+					<p class="product">{{ cart.product }}</p>
+					<p class="price">{{ cart.price }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/jquery.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/popper.js"></script>
+	<script type="text/javascript" src="css/bootstrap/dist/js/js.js"></script>
+	<script src="fontawesome.js"></script>
+</html>

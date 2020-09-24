@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/dist/css/bootstrapku.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-4">
+    			<h2>Add New Guest</h2>
+    		</div>
+    		<div class="col-2"></div>
+    		<div class="col-4">
+    			<h2>My Guest</h2>
+    		</div>
+    	</div>
+
+    	<div id="app">
+    	<div class="row">
+    		<div class="col-4">
+    			<div class="input-group mb-3">
+					<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">@</span>
+					</div>
+					<input v-on:keyup.enter="saveguest"v-model="guestname"type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<button v-on:click="saveguest" type="button" class="btn btn-primary btn-sm">ADD</button>
+    		</div>
+    		<div class="col-2"></div>
+    		<div class="col-4">
+    			<ul>
+    				<li v-for="guest in myguest">{{ guest.guestname }} 
+    				<button @click="deleteguest(guest)"type="button" class="btn btn-danger btn-sm">DELETE</button></li>
+    			</ul>
+    		</div>
+    	</div>
+
+    	<div class="row">
+    		<div class="col">
+    			
+    		</div>
+    	</div>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="css/bootstrap/dist/js/jquery.js"></script>
+    <script type="text/javascript" src="css/bootstrap/dist/js/popper.js"></script>
+    <script type="text/javascript" src="css/bootstrap/dist/js/js.js"></script>
+    <script type="text/javascript" src="js/guest.js"></script>
+    <!-- <script src="js/fontawesome.js"></script> -->
+  </body>
+</html>
